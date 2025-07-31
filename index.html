@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Motorcycle Dashboard - กรอบสมดุล (พื้นหลังดำ, เข็มแดง)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <div class="gauges-wrapper">
+      <div class="gauges-row">
+        <canvas id="speedometer" width="260" height="260"></canvas>
+        <canvas id="tachometer" width="260" height="260"></canvas>
+      </div>
+      <div class="gauges-row">
+        <canvas id="tempGauge" width="200" height="200"></canvas>
+        <canvas id="tpsGauge" width="200" height="200"></canvas>
+        <canvas id="batteryGauge" width="200" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <div class="info-box">
+        <div class="info-label">เกียร์</div>
+        <div class="info-value" id="gear">N</div>
+      </div>
+      <div class="info-box">
+        <div class="info-label">ระยะทาง (กม.)</div>
+        <div class="info-value" id="odometer">0.0</div>
+      </div>
+      <div class="info-box" style="position:relative;">
+        <div class="info-label">สถานะน้ำมัน</div>
+        <div class="bar-container">
+          <svg class="bar-icon" viewBox="0 0 24 24"><path d="M7 22h10v-3H7v3zm8-7H9a1 1 0 010-2h6a1 1 0 010 2zm0-4H9a1 1 0 010-2h6a1 1 0 010 2z"/></svg>
+          <div class="fuel-fill" id="fuelFill"></div>
+        </div>
+        <div class="info-value" id="fuelPercent">0%</div>
+      </div>
+      <div class="info-box" style="position:relative;">
+        <div class="info-label">สถานะแบตเตอรี่</div>
+        <div class="bar-container">
+          <svg class="bar-icon" viewBox="0 0 24 24"><path d="M16 6v-1h-8v1H6v12h12V6h-2zm-6 0h4v6h-4V6z"/></svg>
+          <div class="battery-fill" id="batteryFill"></div>
+        </div>
+        <div class="info-value" id="batteryPercent">0%</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
